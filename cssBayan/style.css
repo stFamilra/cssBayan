@@ -2,9 +2,6 @@
   .container {
     color: red;
   }
-  img {
-    width: 70%;
-  }
 }
 
 @media (min-width: 820px) and (max-width: 1919px) {
@@ -17,8 +14,37 @@
   .container {
     color: blue;
   }
+}
 
-  img {
-    width: 50%;
-  }
+.container .inner {
+  width: calc(100% - 40px);
+  margin: 0 auto;
+  height: 0;
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+.container label {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  margin: 0 0 5px;
+  transition: color 0.35s;
+}
+.container input {
+  display: none;
+}
+.container label:before {
+  content: "\276F";
+  float: right;
+}
+.container input:checked + label:before {
+  transition: transform 0.35s;
+  transform: rotate(90deg);
+}
+.container input:checked + label + .inner {
+  height: auto;
+  /* margin-top: -5px;
+  color: #000;
+  padding: 20px 30px 10px; */
 }
