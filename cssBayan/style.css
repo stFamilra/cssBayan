@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Courier New", sans-serif;
+}
+
+.container__input:checked ~ label {
+  color: black;
+}
+
+body {
+  background-color: blanchedalmond;
+}
+
+h1 {
+  color: black;
+}
+
+.container {
+  color: blue;
+}
+
+.container:hover img {
+  transition: 3s ease;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+input,
+.inner {
+  display: none;
+}
+
+.container__input:checked ~ .inner {
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  border-top: 1px solid gray;
+  display: flex;
+  padding-top: 2%;
+}
+
+label {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 3%;
+}
+
+img {
+  margin: 1%;
+}
+
+@media (min-width: 0) and (max-width: 819px) {
+  body {
+    font-size: 1.8rem;
+    margin: 0 auto;
+  }
+  .container > .item > .container__input:checked ~ .title::after {
+    content: "-";
+  }
+
+  .container > .item > .title::after {
+    content: "+";
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+  }
+
+  img {
+    width: 50%;
+  }
+}
+
+@media (min-width: 820px) and (max-width: 1919px) {
+  .container {
+    max-width: 26%;
+    margin: 0 auto;
+  }
+  .container > .item > .container__input:checked ~ .title::after {
+    content: "-";
+  }
+
+  .container > .item > .title::after {
+    content: "+";
+  }
+
+  body {
+    font-size: 1.5rem;
+  }
+  img {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1920px) {
+  body {
+    font-size: 1.2rem;
+  }
+  .title:hover ~ .inner {
+    display: flex;
+    justify-content: center;
+  }
+
+  body .container:hover {
+    color: black;
+  }
+
+  .container:hover > .item > .container__input:hover ~ .title::after {
+    content: "-";
+  }
+
+  .container:hover > .item > .container__input:checked ~ .title::after {
+    content: "-";
+  }
+
+  .container:hover > .item > .title::after {
+    content: "+";
+  }
+
+  .container {
+    max-width: 26%;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+  .title {
+    cursor: pointer;
+  }
+
+  img {
+    width: 50%;
+    margin: 2%;
+  }
+}
